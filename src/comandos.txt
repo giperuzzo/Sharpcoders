@@ -1,0 +1,5 @@
+1- criar componente de aluno
+ng g c componentes/aluno
+
+2- criar serviço de aluno
+ng g s servicos/aluno
