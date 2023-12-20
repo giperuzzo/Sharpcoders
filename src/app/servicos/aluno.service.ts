@@ -24,6 +24,6 @@ private url:string='http://localhost:3000/alunos';
   }
   // metodos para remover alunos 
   remover(id:number):Observable<any>{
-    return this.http.delete<any>('${this.url}/${id}');
+    return this.http.delete<any>(this.url+'/'+id);
   }
 }

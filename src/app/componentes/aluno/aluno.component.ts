@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AlunoService } from '../../servicos/aluno.service';
 import { Aluno } from '../../modelos/Aluno';
+
 @Component({
   selector: 'app-aluno',
   standalone: true,
@@ -43,5 +44,15 @@ export class AlunoComponent {
       // limpar o formulario
       this.formulario.reset();
   });
+  }
+  // metodo para remover alunos
+  remover(id:number):void{
+    this.servico.remover(id)
+    .subscribe(()=> {
+      // encontrar a  posição do aluno no vetor
+      let posicaoAluno = this.alunos.findIndex(obj => {return obj.id === id});
+      // remover do vetor
+      this.alunos.splice(posicaoAluno, 1);
+    });
   }
 }

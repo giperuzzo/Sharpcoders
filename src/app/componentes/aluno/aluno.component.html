@@ -8,10 +8,12 @@
 
 <!-- TABELA -->
 <table>
+    <tbody>
     <tr *ngFor="let a of alunos">
         <td>{{a.nome}}</td>
         <td>{{a.nota1}}</td>
         <td>{{a.nota2}}</td>
-        <td><button>Remover</button></td>
+        <td><button (click)="remover(a.id || 0)">Remover</button></td>
     </tr>
+    </tbody>
 </table>
